@@ -28,6 +28,8 @@
             <router-link to="/Debounce">Debounce防抖</router-link>
             |
             <router-link to="/Throttle">Throttle节流</router-link>
+            |
+            <router-link to="/DeepClone">DeepClone</router-link>
         </div>
         <div>---以下是内容---</div>
         <router-view />

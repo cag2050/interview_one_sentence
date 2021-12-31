@@ -72,6 +72,10 @@ const routes = [
         path: "/Throttle",
         component: () => import("../views/Throttle.vue"),
     },
+    {
+        path: "/DeepClone",
+        component: () => import("../views/DeepClone.vue"),
+    },
 ]
 
 const router = new VueRouter({
