@@ -21,6 +21,26 @@ export default {
     components: {
         VueMarkdown,
     },
+    data () {
+        return {
+            obj: {
+                'abc': 123
+            }
+        }
+    },
+    mounted() {
+        this.execTest()
+    },
+    methods: {
+        test() {
+            console.log("testCall() this")
+            console.log(this)
+        },
+        execTest() {
+            this.test.call(this.obj)
+            this.test.call(this)
+        }
+    }
 }
 </script>
 

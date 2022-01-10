@@ -76,6 +76,10 @@ const routes = [
         path: "/DeepClone",
         component: () => import("../views/DeepClone.vue"),
     },
+    {
+        path: "/Generator",
+        component: () => import("../views/Generator.vue"),
+    },
 ]
 
 const router = new VueRouter({

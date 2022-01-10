@@ -16,3 +16,25 @@
 4. 主线程不断重复上面的第三步。
 
 > https://www.ruanyifeng.com/blog/2014/10/event-loop.html
+
+### for/in循环、取得对象属性名数组的4个函数，包含项的区别
+函数 | 可枚举 | 不可枚举 | 自有属性 | 继承属性 | 字符串属性 | 符号属性
+--- | --- | --- | --- | --- | --- | ---
+for/in | 是 | | 是 | 是 | 是
+Object.keys() | 是 | | 是 | | 是 |
+Object.getOwnPropertyNames() | 是 | 是 | 是 | | 是 |
+Object.getOwnPropertySymbols() | 是 | 是 | 是 | | | 是
+Reflect.ownKeys() | 是 | 是 | 是 |  | 是 | 是
+
+
+
+
+
+
+
+
+
+
+
+
+

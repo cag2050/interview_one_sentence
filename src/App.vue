@@ -30,6 +30,8 @@
             <router-link to="/Throttle">Throttle节流</router-link>
             |
             <router-link to="/DeepClone">DeepClone</router-link>
+            |
+            <router-link to="/Generator">Generator</router-link>
         </div>
         <div>---以下是内容---</div>
         <router-view />
