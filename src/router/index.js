@@ -80,6 +80,10 @@ const routes = [
         path: "/Generator",
         component: () => import("../views/Generator.vue"),
     },
+    {
+        path: "/lodash/Throttle",
+        component: () => import("../views/lodash/Throttle"),
+    },
 ]
 
 const router = new VueRouter({

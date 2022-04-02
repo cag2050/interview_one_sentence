@@ -32,6 +32,8 @@
             <router-link to="/DeepClone">DeepClone</router-link>
             |
             <router-link to="/Generator">Generator</router-link>
+            |
+            <router-link to="/lodash/Throttle">lodash/Throttle</router-link>
         </div>
         <div>---以下是内容---</div>
         <router-view />
