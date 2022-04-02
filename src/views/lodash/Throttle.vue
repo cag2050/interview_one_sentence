@@ -8,17 +8,15 @@ import { throttle } from "lodash-es"
 export default {
     data() {
         return {
+            throttleFunc: throttle(this.handleEvent, 2 * 1000, {
+                leading: true,
+                trailing: true,
+            }),
             timestamp: new Date().getTime(),
         }
     },
     mounted() {
-        window.addEventListener(
-            "mousemove",
-            throttle(this.handleEvent, 2 * 1000, {
-                leading: true,
-                trailing: true,
-            })
-        )
+        window.addEventListener("mousemove", this.throttleFunc)
     },
     methods: {
         handleEvent() {
