@@ -84,6 +84,10 @@ const routes = [
         path: "/lodash/Throttle",
         component: () => import("../views/lodash/Throttle"),
     },
+    {
+        path: "/test-class",
+        component: () => import("../views/TestClass"),
+    },
 ]
 
 const router = new VueRouter({

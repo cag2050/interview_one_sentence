@@ -34,6 +34,8 @@
             <router-link to="/Generator">Generator</router-link>
             |
             <router-link to="/lodash/Throttle">lodash/Throttle</router-link>
+            |
+            <router-link to="/test-class">test-class</router-link>
         </div>
         <div>---以下是内容---</div>
         <router-view />
