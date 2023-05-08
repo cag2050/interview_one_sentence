@@ -8,7 +8,7 @@
 <script>
     let eventTimes = 0// 触发事件次数
     let execTimes = 0 // 执行动作次数
-    let timeout = null
+    let timeout = null // todo 放到debounce函数里
 
     // debounce原理：事件发生时，n秒后执行设置的定时器任务；在这n秒内，事件再发生，清除之前设置的定时器，重新设置n秒后执行的定时器；最后设置的定时器执行
     function debounce(func, wait) {
@@ -17,9 +17,8 @@
             clearTimeout(timeout)
         }
         return function() {
-            // console.log("args:", args)
             timeout = setTimeout(() => {
-                func.apply(_this, arguments) //
+                func.apply(_this, arguments) // 在重写后的代码中，没有命名参数。name和message参数都不见了，但函数照样可以调用。这就表明，ECMAScript函数的参数只是为了方便才写出来的，并不是必须写出来的。与其他语言不同，在ECMAScript中的命名参数不会创建让之后的调用必须匹配的函数签名。这是因为根本不存在验证命名参数的机制。https://weread.qq.com/web/reader/751326d0720befab7514782?
             }, wait)
         }
     }
