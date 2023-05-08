@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    let eventTimes = 0// 触发事件次数
+    let execTimes = 0 // 执行动作次数
+    let timeout = null
+
+    // debounce原理：事件发生时，n秒后执行设置的定时器任务；在这n秒内，事件再发生，清除之前设置的定时器，重新设置n秒后执行的定时器；最后设置的定时器执行
+    function debounce(func, wait) {
+        let _this = this
+        if (timeout) {
+            clearTimeout(timeout)
+        }
+        return function() {
+            // console.log("args:", args)
+            timeout = setTimeout(() => {
+                func.apply(_this, arguments) //
+            }, wait)
+        }
+    }
+
+    function handleEvent(event) {
+        eventTimes += 1
+        console.log("触发事件次数:", eventTimes)
+        debounce(executeAction, 2000)("xyz")
+    }
+
+    function executeAction(param1) {
+        // console.log(param1)
+        execTimes += 1
+        console.log("执行动作次数:", execTimes)
+    }
+
+    window.addEventListener("mousemove", handleEvent, false)
+</script>
+
+</body>
+</html>
